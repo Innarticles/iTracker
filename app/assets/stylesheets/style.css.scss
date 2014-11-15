@@ -1,0 +1,34 @@
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+#a {
+color: #EDF3F9;
+}
+.grad {
+	background: linear-gradient(to bottom, #4C9ED9, #B9D9F0);
+}
+.glfIcons{
+	text-align: center;
+}
+    .fa {
+display: inline-block;
+font-family: FontAwesome;
+font-style: normal;
+font-weight: normal;
+font-size: 9em;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+color: white;
+margin-top: 50px;
+}
+.robot{
+    letter-spacing: 5px;    
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-shadow: 0 0 1em blue, 0 0 0.2em blue;
+}
+
+
