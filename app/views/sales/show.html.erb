@@ -9,20 +9,8 @@
   <dd><%= @order.custumer %></dd>
   <dt><strong><%= model_class.human_attribute_name(:product) %>:</strong></dt>
   <dd><%= @order.product %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:account_approval) %>:</strong></dt>
-  <dd><%= @order.account_approval %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:account_comment) %>:</strong></dt>
-  <dd><%= @order.account_comment %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:warehouse_approval) %>:</strong></dt>
-  <dd><%= @order.warehouse_approval %></dd>
   <dt><strong><%= model_class.human_attribute_name(:destination) %>:</strong></dt>
   <dd><%= @order.destination %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:current_location) %>:</strong></dt>
-  <dd><%= @order.current_location %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:delivered) %>:</strong></dt>
-  <dd><%= @order.delivered %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:warehouse_comment) %>:</strong></dt>
-  <dd><%= @order.warehouse_comment %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

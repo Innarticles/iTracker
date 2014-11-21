@@ -1,0 +1,46 @@
+<%= render :partial => '/shared/header' %>
+<div class="row">
+  <!-- A vertical nav-bar -->
+  <%= render :partial => '/shared/sidebar2' %>
+  
+    <!-- A table -->
+  <div class="col-lg-6">
+      <div class="page-header">
+        <h1>All Orders</h1>
+      </div>
+      <div class="panel panel-info">
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr class="info">
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Destination</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @orders.each do |order| %>
+                <tr>
+                  <td><%= link_to order.id, order_path(order) %></td>
+                  <td><%= order.custumer %></td>
+                  <td><%= order.product %></td>
+                  <td><%= order.destination %></td>
+                  <td>
+                    <%= link_to "Edit",
+                                edit_order_path(order), :class => 'btn btn-default btn-xs' %>
+                    <%= link_to "Delete",
+                                order_path(order),
+                                :method => :delete,
+                                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                                :class => 'btn btn-xs btn-danger' %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+      </div>
+  </div>
+</div>
+

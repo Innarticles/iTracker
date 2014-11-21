@@ -1,28 +1,13 @@
-<div style="height: 300px;" class="row grad">
-    <div class="col-lg-4">
-      <div class="glfIcons">
-        <i class="fa fa-sign-out"></i>
-            <h3 class="robot">Add Order to Chain</h3>
-            <p>Sales Person generates orders</p>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="glfIcons"><i class="fa fa-tasks"></i>
-        <h3 class="robot">Process Order in Chain</h3>
-            <p>Sales Person generates orders</p>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="glfIcons"><i class="fa fa-thumbs-up"></i>
-          <h3 class="robot">Confirm Delivery</h3>
-          <p>Sales Person generates orders</p>
-      </div>
-    </div>
-  </div>
+<%= render :partial => '/shared/header' %>
+<div class="row">
+  <!-- A vertical nav-bar -->
+  <%= render :partial => '/shared/sidebar2' %>
 <%- model_class = Order -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h4><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h4>
 </div>
+<div class="panel panel-primary">
+  <div class="panel-heading">Panel heading</div>
 <table class="table table-condensed table-hover">
   <thead>
     <tr>
@@ -69,3 +54,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_order_path,
             :class => 'btn btn-primary' %>
+</div>

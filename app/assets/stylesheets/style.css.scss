@@ -1,3 +1,8 @@
+$color1: #3A4B7F;
+$color2: #B0D0FF;
+$color3: #7496FF;
+$color4: #18687F;
+$color5: #5C78CC;
 
 .center {
     margin-left: auto;
@@ -9,26 +14,65 @@ color: #EDF3F9;
 }
 .grad {
 	background: linear-gradient(to bottom, #4C9ED9, #B9D9F0);
+    margin-top: 8px;
 }
 .glfIcons{
 	text-align: center;
 }
-    .fa {
-display: inline-block;
-font-family: FontAwesome;
-font-style: normal;
-font-weight: normal;
-font-size: 9em;
-line-height: 1;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-color: white;
-margin-top: 50px;
+.fa {
+
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 9em;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: white;
+        margin-top: 50px;
 }
 .robot{
     letter-spacing: 5px;    
     font-family: 'Open Sans Condensed', sans-serif;
     text-shadow: 0 0 1em blue, 0 0 0.2em blue;
 }
+.sidebar {
+    height: 100%;
+    padding-top: 20px !important;
+    
+}
 
+hr {
+margin-top: 0;
+margin-bottom: 20px;
+border: 0;
+border-top: 1px solid $color3;
+}
 
+.page-header{
+    margin: 0 0 20px;
+}
+.sidebar ul {
+    border: 1px solid $color5;
+    border-radius: 5px;
+    li{
+       background-color: $color1;
+       .fa{
+            display: inline;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1em;
+            line-height: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: white;
+            margin-top: 50px;
+
+       }
+       li:hover {
+        background-color: #fff;
+       } 
+    }
+}

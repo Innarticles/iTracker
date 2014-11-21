@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sales/index'
+  get 'sales/complete'
+
+
+  get 'sales/new_order'
+
   root 'orders#index'
   resources :orders
 
