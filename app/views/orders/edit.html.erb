@@ -1,5 +1,22 @@
-<%- model_class = Order -%>
+<div class="row">
+  <!-- A vertical nav-bar -->
+  <%= render :partial => '/shared/sidebar2' %>
+  <div class="col-md-10">
 <div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+  <h1><%= "You are in #{@stagename} stage"%><%= content_for :s %></h1>
 </div>
-<%= render :partial => 'form' %>
+<!-- render different views based on the stage the order is -->
+<% if (@order.stage_id == 1 ) %>
+<%= render :partial => '/shared/orderinfo1' %>
+	<!-- go to stage 2 -->
+<% elsif (@order.stage_id == 2 ) %>
+<%= render :partial => '/shared/orderinfo2' %>
+		<!-- go to stage 3 -->
+<% elsif (@order.stage_id == 3 ) %>
+<%= render :partial => '/shared/orderinfo3' %>
+		<!-- go to stage 4 -->
+<% elsif (@order.stage_id == 4 ) %>
+<%= render :partial => '/shared/orderinfo4' %>
+<% end %>
+
+</div>

@@ -7,6 +7,13 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def stage
+    @orders = Order.all
+  end
+  #GET /ordes
+  def stage2
+    @orders = Order.all
+  end
   # GET /orders/1
   # GET /orders/1.json
   def show
@@ -24,8 +31,8 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
-
+     @order = Order.new(order_params)
+     @order.stage_id = 1
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
@@ -40,7 +47,9 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+     
     respond_to do |format|
+      
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
@@ -69,6 +78,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:custumer, :product, :account_approval, :account_comment, :warehouse_approval, :destination, :current_location, :delivered)
+      params.require(:order).permit(:custumer,:stage_id, :product, :account_approval, :account_comment, :warehouse_approval, :destination, :current_location, :warehouse_comment, :delivered)
     end
 end

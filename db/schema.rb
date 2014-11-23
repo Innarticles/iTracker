@@ -11,20 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113144517) do
+ActiveRecord::Schema.define(version: 20141123164540) do
 
   create_table "orders", force: true do |t|
     t.string   "custumer"
     t.string   "product"
-    t.string   "account_approval"
+    t.boolean  "account_approval",   limit: 255
     t.text     "account_comment"
-    t.string   "warehouse_approval"
+    t.boolean  "warehouse_approval", limit: 255
     t.string   "destination"
     t.string   "current_location"
-    t.string   "delivered"
+    t.boolean  "delivered",          limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "warehouse_comment"
+    t.integer  "stage_id"
+    t.string   "driver"
+  end
+
+  add_index "orders", ["stage_id"], name: "index_orders_on_stage_id"
+
+  create_table "stages", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

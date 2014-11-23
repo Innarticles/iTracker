@@ -1,4 +1,4 @@
-<%= render :partial => '/shared/header' %>
+
 <div class="row">
   <!-- A vertical nav-bar -->
   <%= render :partial => '/shared/sidebar2' %>
@@ -23,6 +23,7 @@
   <dd><%= @order.delivered %></dd>
   <dt><strong><%= model_class.human_attribute_name(:warehouse_comment) %>:</strong></dt>
   <dd><%= @order.warehouse_comment %></dd>
+  <dd><%= @order.stage_id %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

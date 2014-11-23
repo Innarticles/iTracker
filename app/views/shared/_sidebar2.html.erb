@@ -45,13 +45,17 @@
                   <li>New New 2</li>
                   <li>New New 3</li>
                 </ul>
- -->            <li> <%= link_to  sales_new_order_path do %>
+ -->            <li> <%= link_to  new_order_path do %>
                 <i class="fa fa-plus"></i>&nbsp;Create new
                 <% end %>
                  </li>
 
-                 <li> <%= link_to  sales_new_order_path do %>
+                 <li> <%= link_to  orders_path do %>
                     <i class="fa fa-list"></i>&nbsp;All Orders
+                    <% end %>
+                 </li>
+                 <li> <%= link_to  orders_stage2_path do %>
+                    <i class="fa fa-list"></i>&nbsp;Orders for Aprroval
                     <% end %>
                  </li>
 

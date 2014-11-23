@@ -1,0 +1,43 @@
+<%= form_for @order, :html => { :class => "form-horizontal" } do |f| %>
+
+    <% if @order.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :custumer, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :custumer, :class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:custumer]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :product, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :product, :class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:product]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :destination, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :destination, :class => 'form-control' %>
+      <%= f.hidden_field :stage_id %>
+    </div>
+    <%= error_span(@order[:destination]) %>
+  </div><%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            orders_path, :class => 'btn btn-default' %>
+
+<% end %>

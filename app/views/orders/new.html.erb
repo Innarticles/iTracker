@@ -1,4 +1,4 @@
-<%= render :partial => '/shared/header' %>
+
 <div class="row">
   <!-- A vertical nav-bar -->
   <%= render :partial => '/shared/sidebar2' %>
@@ -12,9 +12,8 @@
 		<div class="page-header">
 		  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
 		</div>
-		<%= render :partial => 'form' %>
 
-	</div>
-	<div class="col-lg-4">
+		<%= render :partial => '/shared/form1' %>
+
 	</div>
 </div>
