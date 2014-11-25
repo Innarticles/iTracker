@@ -3,4 +3,16 @@
   <%= render :partial => '/shared/sidebar2' %>
 
 
-  <%= render :partial => '/shared/orderinfo2' %>
+   <% if (@id == 1 ) %>
+<%= render :partial => '/shared/index' %>
+  <!-- go to stage 2 -->
+<% elsif (@id == 2 ) %>
+<%= render :partial => '/shared/index2' %>
+    <!-- go to stage 3 -->
+<% elsif (@id == 3 ) %>
+<%= render :partial => '/shared/index3' %>
+    <!-- go to stage 4 -->
+<% elsif (@id == 4 ) %>
+<%= render :partial => '/shared/index4' %>
+
+<% end %>

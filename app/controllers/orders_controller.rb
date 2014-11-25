@@ -9,9 +9,10 @@ class OrdersController < ApplicationController
 
   def stage
     @orders = Order.all
+    @id = params[:id]
   end
   #GET /ordes
-  def stage2
+  def stag
     @orders = Order.all
   end
   # GET /orders/1
@@ -26,6 +27,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    @stagename='hi'
   end
 
   # POST /orders

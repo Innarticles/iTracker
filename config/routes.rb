@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
 
   get 'sales/new_order'
-  get 'orders/stage2'
-  get 'orders/stage'
+  get 'orders/stag'
+  get 'orders/stage/:id' => 'orders#stage'
   root 'orders#index'
   resources :orders
 

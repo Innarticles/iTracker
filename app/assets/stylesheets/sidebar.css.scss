@@ -1,17 +1,18 @@
-$color1: #3A4B7F;
-$color2: #B0D0FF;
-$color3: #7496FF;
-$color4: #18687F;
-$color5: #5C78CC;
+$color1: #58595b;
+$color2: rgb(86, 86, 86);
+$color3: #81CFE0;
+$color4: #52B3D9;
+$color5: #e0e0e0;
+$sidebartext:  rgb(198, 198, 198);
 
 
 
 .nav-side-menu {
   overflow: auto;
   font-family: verdana;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
-  background-color: #B7D8EF; 
+  background-color: $color1; 
   top: 0px;
   height: 100%;
   color: #e1ffff;

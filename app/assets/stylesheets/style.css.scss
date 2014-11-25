@@ -1,8 +1,51 @@
-$color1: #4183D7;
-$color2: #59ABE3;
+@font-face {
+
+font-family: 'Lato';
+src:font-url('Lato-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+
+font-family: 'Oswald';
+src:font-url('Oswald-Light.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+
+font-family: 'Open Sans';
+src:font-url('OpenSans.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+
+font-family: 'Roboto Slab';
+src:font-url('RobotoSlab-Light.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {font-family: 'Indie Flower', cursive;
+
+font-family: 'Indie Flower';
+src:font-url('IndieFlower.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+
+$color1: #58595b;
+$color2: rgb(86, 86, 86);
 $color3: #81CFE0;
 $color4: #52B3D9;
-$color5: #C5EFF7;
+$color5: #e0e0e0;
+$sidebartext:  rgb(198, 198, 198);
+
+
+
+
+
 
 .center {
     margin-left: auto;
@@ -17,13 +60,13 @@ span.status{
     height: 10px; 
     margin: 0.25em auto; 
     padding: 0; 
-    border: 1px solid #000000;
+    border: 0px solid #000000;
     &.true{
-        background: blue; 
-        color: green
+        background: rgb(92, 184, 92); 
+        color: rgb(92, 184, 92);
     }
     &.false {
-        background: red; 
+        background: rgb(217, 83, 79); 
         color: red
     }
 }
@@ -32,17 +75,22 @@ span.status{
 margin-top: 60px;
 }
 
-.nav-side-menu li {
-padding-left: 0px;
-border-bottom: 1px solid #B5CAE4;
+.navbar-inverse .navbar-brand{
+    color: white;
 }
+.nav-side-menu li {
+padding-left: 0px;}
 #a {
 color: #EDF3F9;
 }
 .grad {
 	/*background: linear-gradient(to bottom, #4C9ED9, #B9D9F0);*/
-    background: linear-gradient(to bottom, $color3, $color1);
+    background: linear-gradient(to bottom, $color1, $color3);
     text-align: center;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+color: #F4EDED;
 }
 
 
@@ -61,18 +109,28 @@ color: #EDF3F9;
 }
 .robot{
     letter-spacing: 5px;    
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Roboto Slab';
     text-shadow: 0 0 1em blue, 0 0 0.2em blue;
 }
 .sidebar {
     font-family: 'Oswald';
-    border: 2px solid;
-    border-right-color: #A9AFB2;
     height: 800px;
+    padding: 0px;
+    
+}
+.profileimg{
+    background-size: cover ;
+    border-radius: 100px;
+     -webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+
+}
+.imageholder{
+    text-align: center;
     
 }
 table {
-font-family: 'Roboto', serif;
+font-family: 'Lato', serif;
 font-size: 10px;
 }
 
@@ -87,10 +145,12 @@ border-top: 1px solid $color3;
     margin: 0 0 20px;
 }
 .sidebar ul {
-    border: 1px solid $color5;
-    border-radius: 5px;
     li{
-       background-color: $color1;
+       background-color: $color2;
+       color: $sidebartext;
+        border-top: 0.1em solid $color2;
+       line-height: normal;
+       padding: 10px;
        .fa{
             display: inline;
             font-family: FontAwesome;
@@ -100,7 +160,7 @@ border-top: 1px solid $color3;
             line-height: 0;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            color: white;
+            margin-left: 10px;
             margin-top: 50px;
 
        }

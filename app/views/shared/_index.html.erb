@@ -5,7 +5,8 @@
     </div>
     <div class="panel panel-primary">
         <div class="panel-heading"><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></div>
-      <table class="table table-condensed table-hover">
+      <!--   <label>Show <select name="ls-editable-table_length" aria-controls="ls-editable-table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label> -->
+      <table class="table table-condensed table-hover table-striped">
         <thead>
           <tr>
             <th><%= model_class.human_attribute_name(:id) %></th>
