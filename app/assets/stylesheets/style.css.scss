@@ -42,10 +42,80 @@ $color4: #52B3D9;
 $color5: #e0e0e0;
 $sidebartext:  rgb(198, 198, 198);
 
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+.navbar-inverse {
+border-color: #5E5656;
+}
+
+.footertext{
+text-align: center;
+margin-top: 20px;
+font-family: 'Lato';
+color: white;
+font-style: italic;
+}
+
+#header {
+   background:#ff0;
+   padding:10px;
+}
+#body {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:$color1;
+}
+
+#container {
+   min-height:100%;
+   position:relative;
+}
+.signup
+{
+    text-align: center;
+   background-color:  #252525;
+}
+.login-box {
+width: 300px;
+margin: 5% auto;
+padding: 20px;
+background: #444;
+position: relative;
+color: #999;
+z-index: 1;
+text-align: center;
+
+}
 
 
+.input-group-addon{
+    background-color:#565656;
+    border-color: #565656;
+}
+.login-box .login-form input{
+background: #565656;
+border: 1px solid #565656;
+color: #999;
+}
+.ls-group-input {
+margin-bottom: 15px;
+}
 
-
+.fa{
+    color: $sidebartext;
+margin-top: 0px;
+}
 
 .center {
     margin-left: auto;
@@ -93,20 +163,6 @@ color: #EDF3F9;
 color: #F4EDED;
 }
 
-
-.fa {
-
-        display: inline-block;
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 9em;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        color: white;
-        margin-top: 50px;
-}
 .robot{
     letter-spacing: 5px;    
     font-family: 'Roboto Slab';
