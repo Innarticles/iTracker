@@ -48,19 +48,22 @@
                   <li>New New 2</li>
                   <li>New New 3</li>
                 </ul>
- -->            <%= link_to  new_order_path do %><li>
+
+ -->            <% if can? :create, @order%>
+                <%= link_to  new_order_path do %><li>
                 <i class="fa fa-plus"></i>&nbsp;&nbsp;Create new
                 </li><% end %>
+                <% end %>
                  
                  <%= link_to  orders_path do %><li> 
                     <i class="fa fa-list"></i>&nbsp;&nbsp;All Orders
                     </li>
                     <% end %>
-                 
+<!--                  
                 <%= link_to  orders_stag_path do %> <li> 
                     <i class="fa fa-list"></i>&nbsp;&nbsp;Orders for Aprroval
                   </li>
-                    <% end %>
+                    <% end %> -->
                  
                 <%= link_to  sales_complete_path do %> <li>
                      <i class="fa fa-check"></i>&nbsp;&nbsp;Completed Orders</li>

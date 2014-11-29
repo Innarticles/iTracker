@@ -49,13 +49,13 @@
     <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
-                      <li>
+                     <!--  <li>
                           <%= link_to "Contact" %>
                       </li>
                       <li>
                           <%= link_to "Admin" %>
                           
-                      </li>
+                      </li> -->
                       <li>
                           <a href="#">About</a>
                         
@@ -70,6 +70,7 @@
 
       <!-- Page Content -->
       <div class="container-fluid main">
+        <div class="row">
         <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>

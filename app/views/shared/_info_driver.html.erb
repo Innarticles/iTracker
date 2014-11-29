@@ -1,0 +1,103 @@
+<%= form_for @order, :html => { :class => "form-horizontal" } do |f| %>
+
+    <% if @order.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <label class="control-label">Customer</label>
+    <div class="controls">
+      <%= f.text_field :custumer, :readonly => true,:class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:custumer]) %>
+  </div>
+
+
+  <div class="control-group">
+    <%= f.label :product, :class => 'control-label' %>
+    <div class="controls col--4">
+      <%= f.text_field :product,:readonly => true, :class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:product]) %>
+  </div>
+
+
+  <div class="control-group">
+    <%= f.label :destination, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :destination,:readonly => true, :class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:destination]) %>
+  </div>
+
+
+ <!--  <div class="control-group">
+    <%= f.label :account_approval, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :account_approval, :disabled => 'true', :class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:account_approval]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :account_comment, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :account_comment, :readonly => true, :class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:account_comment]) %>
+  </div> -->
+
+
+ <div class="control-group">
+    <%= f.label :warehouse_approval, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :warehouse_approval, :disabled => true %>
+    </div>
+    <%= error_span(@order[:warehouse_approval]) %>
+  </div>
+  
+
+  <!-- <div class="control-group">
+    <%= f.label :delivered, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :delivered, :class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:delivered]) %>
+  </div> -->
+
+
+  <div class="control-group">
+    <%= f.label :warehouse_comment, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :warehouse_comment, :readonly => true, :class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:warehouse_comment]) %>
+  </div> 
+
+
+   <div class="control-group">
+    <%= f.label :current_location, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :current_location, :class => 'form-control' %>
+    </div>
+    <%= error_span(@order[:current_location]) %>
+  </div>
+
+  
+<%= f.hidden_field :stage_id, :value => "4" %>
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            orders_path, :class => 'btn btn-default' %>
+
+<% end %>

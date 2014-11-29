@@ -7,14 +7,7 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
-  def stage
-    @orders = Order.all
-    @id = params[:id]
-  end
-  #GET /ordes
-  def stag
-    @orders = Order.all
-  end
+
   # GET /orders/1
   # GET /orders/1.json
   def show
@@ -23,6 +16,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    authorize! :create, @order
   end
 
   # GET /orders/1/edit
@@ -34,6 +28,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
      @order = Order.new(order_params)
+     authorize! :create, @order
      @order.stage_id = 1
     respond_to do |format|
       if @order.save
@@ -49,11 +44,12 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
-     
+     authorize! :update, @order
+
     respond_to do |format|
       
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to orders_path, notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -66,6 +62,7 @@ class OrdersController < ApplicationController
   # DELETE /orders/1.json
   def destroy
     @order.destroy
+    authorize! :delete, @order
     respond_to do |format|
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }

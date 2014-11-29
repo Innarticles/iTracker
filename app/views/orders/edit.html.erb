@@ -1,22 +1,24 @@
-<div class="row">
+
   <!-- A vertical nav-bar -->
   <%= render :partial => '/shared/sidebar2' %>
-  <div class="col-md-10">
+  <div class="col-md-4">
 <div class="page-header">
-  <h1><%= "You are in #{@stagename} stage"%><%= content_for :s %></h1>
+  <h1>Kindly Update this order</h1>
 </div>
 <!-- render different views based on the stage the order is -->
-<% if (@order.stage_id == 1 ) %>
-<%= render :partial => '/shared/orderinfo1' %>
+<% if (current_user.role == "account" ) %>
+<%= render :partial => '/shared/info_account' %>
 	<!-- go to stage 2 -->
-<% elsif (@order.stage_id == 2 ) %>
-<%= render :partial => '/shared/orderinfo2' %>
+<% elsif (current_user.role == "sales" ) %>
+<%= render :partial => '/shared/form1' %>
+<% elsif (current_user.role == "warehouse" ) %>
+<%= render :partial => '/shared/info_warehouse' %>
 		<!-- go to stage 3 -->
-<% elsif (@order.stage_id == 3 ) %>
-<%= render :partial => '/shared/orderinfo3' %>
+<% elsif (current_user.role == "driver") %>
+<%= render :partial => '/shared/info_driver' %>
 		<!-- go to stage 4 -->
-<% elsif (@order.stage_id == 4 ) %>
-<%= render :partial => '/shared/orderinfo4' %>
+<% else %>
+<%= render :partial => '/shared/info_customer' %>
 <% end %>
 
 </div>

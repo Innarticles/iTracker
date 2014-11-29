@@ -1,16 +1,22 @@
-<div class="row">
+
   <!-- A vertical nav-bar -->
   <%= render :partial => '/shared/sidebar2' %>
-
-  <% if (true ) %>
+<%= current_user.role %>
+<ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-home"></i></a></li>
+    <li class="active">Table</li>
+</ol>
+  <% if (current_user.role == "admin" || current_user.role == "sales") %>
 <%= render :partial => '/shared/index' %>
   <!-- go to stage 2 -->
-<% elsif (@order.stage_id == 2 ) %>
-<%= render :partial => '/shared/index2' %>
+<% elsif (current_user.role == "account" ) %>
+<%= render :partial => '/shared/table_account' %>
     <!-- go to stage 3 -->
-<% elsif (@order.stage_id == 3 ) %>
-<%= render :partial => '/shared/index3' %>
+<% elsif (current_user.role == "warehouse"  ) %>
+<%= render :partial => '/shared/table_warehouse' %>
     <!-- go to stage 4 -->
-<% elsif (@order.stage_id == 4 ) %>
-<%= render :partial => '/shared/index4' %>
+<% elsif (current_user.role == "driver" ) %>
+<%= render :partial => '/shared/table_driver' %>
+<% else %>
+<%= render :partial => '/shared/table_customer' %>
 <% end %>
