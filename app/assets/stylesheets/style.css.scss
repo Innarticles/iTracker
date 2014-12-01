@@ -48,7 +48,72 @@ body {
    padding:0;
    height:100%;
 }
+.rot {
+background-color: rgba(68, 68, 68, 0.71);
+color: white;
+font-family: RobotoSlab;
+padding: 5%;
+text-align: right;
+}
+.feature-icon {
+    font-size: 40px;
+    line-height: 100px;
+    border: 1px solid #3071A9;
+        border-top-width: 1px;
+        border-right-width-value: 1px;
+        border-right-width-ltr-source: physical;
+        border-right-width-rtl-source: physical;
+        border-bottom-width: 1px;
+        border-left-width-value: 1px;
+        border-left-width-ltr-source: physical;
+        border-left-width-rtl-source: physical;
+        border-top-style: solid;
+        border-right-style-value: solid;
+        border-right-style-ltr-source: physical;
+        border-right-style-rtl-source: physical;
+        border-bottom-style: solid;
+        border-left-style-value: solid;
+        border-left-style-ltr-source: physical;
+        border-left-style-rtl-source: physical;
+        border-top-color: #3071A9;
+        border-right-color-value: rgb(48, 113, 169);
+        border-right-color-ltr-source: physical;
+        border-right-color-rtl-source: physical;
+        border-bottom-color: #3071A9;
+        border-left-color-value: rgb(48, 113, 169);
+        border-left-color-ltr-source: physical;
+        border-left-color-rtl-source: physical;
+        -moz-border-top-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        border-image-source: none;
+        border-image-slice: 100% 100% 100% 100%;
+        border-image-width: 1 1 1 1;
+        border-image-outset: 0 0 0 0;
+        border-image-repeat: stretch stretch;
+    height: 100px;
+    width: 100px;
+    transition: all 0.6s ease 0s;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 50%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    color: #3071A9;
+}
 
+.loginpad{
+  padding-top: 17%;
+}
+
+.body{
+  background: url('/assets/isb.png');
+  background-repeat: no-repeat;
+}
 .navbar-inverse {
 border-color: #5E5656;
 }
@@ -114,9 +179,8 @@ font-style: italic;
 }
 .login-box {
 width: 300px;
-margin: 5% auto;
 padding: 20px;
-background: #444;
+background: rgba(68, 68, 68, 0.71);
 position: relative;
 color: #999;
 z-index: 1;
@@ -192,7 +256,7 @@ color: #F4EDED;
 .robot{
     letter-spacing: 5px;    
     font-family: 'Roboto Slab';
-    text-shadow: 0 0 1em blue, 0 0 0.2em blue;
+    text-shadow: 0 0 1em white, 0 0 0.2em black;
 }
 .sidebar {
     font-family: 'Oswald';
@@ -251,11 +315,15 @@ border-top: 1px solid $color3;
        } 
     }
 }
+h3 {
+font-size: 20px;
+text-align: center;
+}
 
+.newbtn {
+margin-top: 10px;
+}
 .form-horizontal {
-border: 1px solid;
-border-color: rgb(213, 224, 224);
 padding: 13px;
-border-radius: 10px;
-box-shadow: inset 0.3em 0.3em 0.9em rgb(211, 199, 226);
+/*box-shadow: inset 0.3em 0.3em 0.9em rgb(211, 199, 226);*/
 }

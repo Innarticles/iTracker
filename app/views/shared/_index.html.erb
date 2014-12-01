@@ -1,11 +1,10 @@
-<div class="col-md-10">
+
     <%- model_class = Order -%>
     <div class="page-header">
       
     </div>
     <div class="panel panel-primary">
         <div class="panel-heading"><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></div>
-      <!--   <label>Show <select name="ls-editable-table_length" aria-controls="ls-editable-table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label> -->
       <table class="table table-condensed table-hover table-striped">
         <thead>
           <tr>
@@ -30,9 +29,9 @@
               <td><%= order.product %></td>
               <td><%= order.destination %></td>
               <td><%= approve_tag(order.account_approval) %></td>
-              <td><%= order.account_comment %></td>
+             <!--  <td><%= order.account_comment %></td> -->
               <td><%= approve_tag(order.warehouse_approval) %></td>
-              <td><%= order.warehouse_comment %></td>
+            <!--   <td><%= order.warehouse_comment %></td> -->
               <td><%= order.current_location %></td>
               <td><%= approve_tag(order.delivered) %></td>
               <td>
@@ -53,5 +52,3 @@
                     new_order_path,
                     :class => 'btn btn-primary' %>
     </div>
-
-</div>

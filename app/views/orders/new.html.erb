@@ -1,61 +1,50 @@
+<%= render :partial => '/shared/sidebar2' %>
+          <!-- /.container -->
 
-  <!-- A vertical nav-bar -->
-  <%= render :partial => '/shared/sidebar2' %>
-  
-   
-<div class="row">
+    <div id="page-wrapper">
 
-	<div class="col-lg-4">
+            <div class="container-fluid">
 
-		<%- model_class = Order -%>
-		<div class="page-header">
-		  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
-		</div>
+                <!-- Page Heading -->
+                    <div class="row">
+                    <div class="col-lg-12" style="margin-top: 60px;">
+                            <% if notice %>
+                          <p class="alert alert-info alert-dismissable"><%= notice %></p>
+                          <% end %>
+                      <% if alert %>
+                       <p class="alert alert-danger alert-dismissable"><%= alert %></p>
+                       <% end %>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Order <small>Add an order for authorisation</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> New
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+      <div class="row">
+            <!-- A vertical nav-bar -->
+              <!-- A table -->
+            <div class="col-lg-12">
+       
+                <div class="col-lg-6">
 
-		<%= render :partial => '/shared/form1' %>
+                   <!--  <%- model_class = Order -%> -->
+                        <div class="page-header">
+                          <!-- <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1> -->
+                        </div>
 
-	</div>
-	
-	<div class="col-xs-6 col-md-3">
-		<div class="page-header">
-		  
-		</div>
-		<div class="panel panel-primary text-center panel-eyecandy">
-            <div class="panel-body theme-color">
-                <i class="fa fa-shopping-cart fa-3x"></i>
-                    <h3>32 <i class="fa fa-arrow-circle-o-up"></i></h3>
-            </div>
-            <div class="panel-footer">
-                <span class="panel-eyecandy-title">
-                    Sales
-                </span>
-            </div>
-        </div>
+                        <%= render :partial => '/shared/form1' %>
 
+                 </div>
 
-        <div class="panel panel-primary text-center panel-eyecandy">
-            <div class="panel-body theme-color">
-                <i class="fa fa-shopping-cart fa-3x"></i>
-                    <h3>32 <i class="fa fa-arrow-circle-o-up"></i></h3>
-            </div>
-            <div class="panel-footer">
-                <span class="panel-eyecandy-title">
-                    Sales
-                </span>
-            </div>
-        </div>
-
-
-        <div class="panel panel-primary text-center panel-eyecandy">
-            <div class="panel-body theme-color">
-                <i class="fa fa-shopping-cart fa-3x"></i>
-                    <h3>32 <i class="fa fa-arrow-circle-o-up"></i></h3>
-            </div>
-            <div class="panel-footer">
-                <span class="panel-eyecandy-title">
-                    Sales
-                </span>
+               
             </div>
         </div>
-	</div>
 </div>

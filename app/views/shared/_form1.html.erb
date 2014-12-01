@@ -36,8 +36,8 @@
       <%= f.hidden_field :stage_id %>
     </div>
     <%= error_span(@order[:destination]) %>
-  </div><%= f.submit nil, :class => 'btn btn-primary' %>
+  </div><%= f.submit nil, :class => 'btn btn-primary newbtn' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            orders_path, :class => 'btn btn-default' %>
+            orders_path, :class => 'btn btn-default newbtn' %>
 
 <% end %>

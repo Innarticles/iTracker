@@ -1,22 +1,151 @@
 
-  <!-- A vertical nav-bar -->
+
   <%= render :partial => '/shared/sidebar2' %>
-<%= current_user.role %>
-<ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-home"></i></a></li>
-    <li class="active">Table</li>
-</ol>
-  <% if (current_user.role == "admin" || current_user.role == "sales") %>
-<%= render :partial => '/shared/index' %>
-  <!-- go to stage 2 -->
-<% elsif (current_user.role == "account" ) %>
-<%= render :partial => '/shared/table_account' %>
-    <!-- go to stage 3 -->
-<% elsif (current_user.role == "warehouse"  ) %>
-<%= render :partial => '/shared/table_warehouse' %>
-    <!-- go to stage 4 -->
-<% elsif (current_user.role == "driver" ) %>
-<%= render :partial => '/shared/table_driver' %>
-<% else %>
-<%= render :partial => '/shared/table_customer' %>
+          <!-- /.container -->
+
+    <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                    <div class="row">
+                    <div class="col-lg-12" style="margin-top: 60px;">
+                            <% if notice %>
+                          <p class="alert alert-info alert-dismissable"><%= notice %></p>
+                          <% end %>
+                      <% if alert %>
+                       <p class="alert alert-danger alert-dismissable"><%= alert %></p>
+                       <% end %>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Order-Delivery  <small>Tracking</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+<% if current_user.role == "admin" || current_user.role == "warehouse" || current_user.role == "account" || current_user.role == "sales" %>
+       <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-envelope fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                         <% @filter = @orders.all.select{ |i| i.account_comment == nil and i.warehouse_comment == nil } %>
+                                        <div class="huge"><%= @filter.count %></div>
+                                        <div>New Orders</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-money fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <% @filter = @orders.all.select{ |i| i.account_comment == nil and i.warehouse_comment == nil } %>
+                                        <div class="huge"><%= @filter.count %></div>
+                                        <div>Account Pending</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <% @filter = @orders.all.select{ |i| i.account_comment != nil and i.warehouse_comment == nil } %>
+                                        <div class="huge"><%= @filter.count %></div>
+                                        <div>Pending checkout</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-check-square-o fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <% @filter = @orders.all.select{ |i| i.account_comment != nil and i.warehouse_comment != nil } %>
+                                        <div class="huge"><%= @filter.count %></div>
+                                        <div>Pending deliveries</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left"></span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
 <% end %>
+      	<div class="row">
+            <!-- A vertical nav-bar -->
+              <!-- A table -->
+         <div class="col-lg-12">
+       
+		  	<% if (current_user.role == "admin" || current_user.role == "sales") %>
+				<%= render :partial => '/shared/index' %>
+				  <!-- go to stage 2 -->
+			<% elsif (current_user.role == "account" ) %>
+				<%= render :partial => '/shared/table_account' %>
+				    <!-- go to stage 3 -->
+			<% elsif (current_user.role == "warehouse"  ) %>
+				<%= render :partial => '/shared/table_warehouse' %>
+				    <!-- go to stage 4 -->
+			<% elsif (current_user.role == "driver" ) %>
+				<%= render :partial => '/shared/table_driver' %>
+			<% else %>
+				<%= render :partial => '/shared/table_customer' %>
+			<% end %>
+		</div>
+        </div>
+</div>

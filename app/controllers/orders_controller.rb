@@ -6,7 +6,10 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.all
   end
-
+  
+  def chart
+    @orders = Order.all
+  end
 
   # GET /orders/1
   # GET /orders/1.json
@@ -32,7 +35,7 @@ class OrdersController < ApplicationController
      @order.stage_id = 1
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to orders_path, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }

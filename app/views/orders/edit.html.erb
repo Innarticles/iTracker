@@ -1,24 +1,55 @@
+<%= render :partial => '/shared/sidebar2' %>
+          <!-- /.container -->
 
-  <!-- A vertical nav-bar -->
-  <%= render :partial => '/shared/sidebar2' %>
-  <div class="col-md-4">
-<div class="page-header">
-  <h1>Kindly Update this order</h1>
-</div>
-<!-- render different views based on the stage the order is -->
-<% if (current_user.role == "account" ) %>
-<%= render :partial => '/shared/info_account' %>
-	<!-- go to stage 2 -->
-<% elsif (current_user.role == "sales" ) %>
-<%= render :partial => '/shared/form1' %>
-<% elsif (current_user.role == "warehouse" ) %>
-<%= render :partial => '/shared/info_warehouse' %>
-		<!-- go to stage 3 -->
-<% elsif (current_user.role == "driver") %>
-<%= render :partial => '/shared/info_driver' %>
-		<!-- go to stage 4 -->
-<% else %>
-<%= render :partial => '/shared/info_customer' %>
-<% end %>
+    <div id="page-wrapper">
 
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                    <div class="row">
+                    <div class="col-lg-12" style="margin-top: 60px;">
+                            <% if notice %>
+                          <p class="alert alert-info alert-dismissable"><%= notice %></p>
+                          <% end %>
+                      <% if alert %>
+                       <p class="alert alert-danger alert-dismissable"><%= alert %></p>
+                       <% end %>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Dashboard <small>Statistics Overview</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+      <div class="row">
+            <!-- A vertical nav-bar -->
+              <!-- A table -->
+            <div class="col-lg-12">
+       
+  					 <h1>Kindly Update this order</h1>
+					</div>
+					<!-- render different views based on the stage the order is -->
+				<% if (current_user.role == "account" ) %>
+					<%= render :partial => '/shared/info_account' %>
+						<!-- go to stage 2 -->
+				<% elsif (current_user.role == "sales" ) %>
+					<%= render :partial => '/shared/form1' %>
+				<% elsif (current_user.role == "warehouse" ) %>
+				<%= render :partial => '/shared/info_warehouse' %>
+							<!-- go to stage 3 -->
+				<% elsif (current_user.role == "driver") %>
+					<%= render :partial => '/shared/info_driver' %>
+							<!-- go to stage 4 -->
+				<% else %>
+					<%= render :partial => '/shared/info_customer' %>
+				<% end %>
+            </div>
+        </div>
 </div>

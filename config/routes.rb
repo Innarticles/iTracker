@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get 'orders/stag'
   get 'orders/stage/:id' => 'orders#stage'
   root 'orders#index'
-  resources :orders
+  get 'orders/chart'
+  resources :orders 
+
+     
+  
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

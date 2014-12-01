@@ -1,46 +1,73 @@
-
-<div class="row">
-  <!-- A vertical nav-bar -->
   <%= render :partial => '/shared/sidebar2' %>
-  
-    <!-- A table -->
-  <div class="col-lg-6">
-      <div class="page-header">
-        <h1>All Orders</h1>
-      </div>
-      <div class="panel panel-info">
-          <table class="table table-condensed table-hover table-striped">
-            <thead>
-              <tr class="info">
-                <th>ID</th>
-                <th>Customer</th>
-                <th>Product</th>
-                <th>Destination</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @orders.each do |order| %>
-                <tr>
-                  <td><%= link_to order.id, order_path(order) %></td>
-                  <td><%= order.custumer %></td>
-                  <td><%= order.product %></td>
-                  <td><%= order.destination %></td>
-                  <td>
-                    <%= link_to "Edit",
-                                edit_order_path(order), :class => 'btn btn-default btn-xs' %>
-                    <%= link_to "Delete",
-                                order_path(order),
-                                :method => :delete,
-                                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                                :class => 'btn btn-xs btn-danger' %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
+          <!-- /.container -->
 
-      </div>
-  </div>
+    <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                    <div class="row">
+                    <div class="col-lg-12">
+                            <% if notice %>
+                          <p class="alert alert-info alert-dismissable"><%= notice %></p>
+                          <% end %>
+                      <% if alert %>
+                       <p class="alert alert-danger alert-dismissable"><%= alert %></p>
+                       <% end %>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Dashboard <small>Statistics Overview</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+      <div class="row">
+            <!-- A vertical nav-bar -->
+              <!-- A table -->
+            <div class="col-lg-6">
+                <div class="page-header">
+                  <h1>All Orders</h1>
+                </div>
+                <div class="panel panel-info">
+                    <table class="table table-condensed table-hover table-striped">
+                      <thead>
+                        <tr class="info">
+                          <th>ID</th>
+                          <th>Customer</th>
+                          <th>Product</th>
+                          <th>Destination</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% @orders.each do |order| %>
+                          <tr>
+                            <td><%= link_to order.id, order_path(order) %></td>
+                            <td><%= order.custumer %></td>
+                            <td><%= order.product %></td>
+                            <td><%= order.destination %></td>
+                            <td>
+                              <%= link_to "Edit",
+                                          edit_order_path(order), :class => 'btn btn-default btn-xs' %>
+                              <%= link_to "Delete",
+                                          order_path(order),
+                                          :method => :delete,
+                                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                                          :class => 'btn btn-xs btn-danger' %>
+                            </td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
 </div>
-

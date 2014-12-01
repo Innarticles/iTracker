@@ -1,74 +1,48 @@
-<div class="col-lg-2 nav-side-menu sidebar">
-    <!-- <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i> -->
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                  
+                         <div class="imageholder">
+                            <% if current_user.role == "admin" %>
+                            <%= image_tag "profile.png", size: "150x150", :class => "profileimg" %>
+                            <% elsif current_user.role == "sales" %>
+                            <%= image_tag "download.jpg", size: "150x150", :class => "profileimg" %>
+                            <% elsif current_user.role == "warehouse" %>
+                            <%= image_tag "warehouse.jpg", size: "150x150", :class => "profileimg" %>
+                             <% elsif current_user.role == "account" %>
+                              <%= image_tag "accountant.jpg", size: "150x150", :class => "profileimg" %>
+                              <% elsif current_user.role == "customer" %>
+                              <%= image_tag "download.jpg", size: "150x150", :class => "profileimg" %>
+                              <% end %>
 
-        <div class="menu-list">
-  
-            <ul id="menu-content" class="menu-content collapse out">
-                <a href="#">
-                <li>
-                  <i class="fa fa-dashboard fa-lg"></i>&nbsp;&nbsp; Dashboard
-                </li>
-                </a>
-                <div class="imageholder">
-          <%= image_tag "profile.png", size: "150x150", :class => "profileimg" %>
-        </div>
-
-                <!-- <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a href="#">CSS3 Animation</a></li>
-                    <li><a href="#">General</a></li>
-                    <li><a href="#">Buttons</a></li>
-                    <li><a href="#">Tabs & Accordions</a></li>
-                    <li><a href="#">Typography</a></li>
-                    <li><a href="#">FontAwesome</a></li>
-                    <li><a href="#">Slider</a></li>
-                    <li><a href="#">Panels</a></li>
-                    <li><a href="#">Widgets</a></li>
-                    <li><a href="#">Bootstrap Model</a></li>
-                </ul>
-
-
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
-                </li>   -->
-                <!-- <ul class="sub-menu collapse" id="service">
-                  <li>New Service 1</li>
-                  <li>New Service 2</li>
-                  <li>New Service 3</li>
-                </ul>
-
-
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
-                </li> -->
-               <!--  <ul class="sub-menu collapse" id="new">
-                  <li>New New 1</li>
-                  <li>New New 2</li>
-                  <li>New New 3</li>
-                </ul>
-
- -->            <% if can? :create, @order%>
-                <%= link_to  new_order_path do %><li>
+                        </div>
+                    
+                    <li class="active">
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                     <%= link_to  orders_chart_path do %>
+                <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;&nbsp;Charts
+                </li><% end %>
+                
+                    
+                    <% if can? :create, @order%>
+                    <li>
+                <%= link_to  new_order_path do %>
                 <i class="fa fa-plus"></i>&nbsp;&nbsp;Create new
                 </li><% end %>
                 <% end %>
-                 
-                 <%= link_to  orders_path do %><li> 
+                 <li>
+                 <%= link_to  orders_path do %> 
                     <i class="fa fa-list"></i>&nbsp;&nbsp;All Orders
                     </li>
                     <% end %>
-<!--                  
-                <%= link_to  orders_stag_path do %> <li> 
-                    <i class="fa fa-list"></i>&nbsp;&nbsp;Orders for Aprroval
-                  </li>
-                    <% end %> -->
-                 
-                <%= link_to  sales_complete_path do %> <li>
+                    <li>
+                    <%= link_to  sales_complete_path do %> 
                      <i class="fa fa-check"></i>&nbsp;&nbsp;Completed Orders</li>
                      <% end %>
-                
-            </ul>
-     </div>
-</div>
+                    
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+</nav>
