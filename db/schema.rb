@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126084301) do
+ActiveRecord::Schema.define(version: 20141203085601) do
 
   create_table "orders", force: true do |t|
     t.string   "custumer"
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(version: 20141126084301) do
     t.text     "warehouse_comment"
     t.integer  "stage_id"
     t.string   "driver"
+    t.string   "attachment"
+    t.string   "receipt_name"
+    t.datetime "account_time"
+    t.datetime "warehouse_time"
+    t.datetime "driver_time"
   end
 
   add_index "orders", ["stage_id"], name: "index_orders_on_stage_id"

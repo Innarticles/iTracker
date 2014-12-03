@@ -11,6 +11,7 @@
             <th><%= model_class.human_attribute_name(:id) %></th>
             <th>Customer</th>
             <th><%= model_class.human_attribute_name(:product) %></th>
+            <th>Download Link</th>
             <th><%= model_class.human_attribute_name(:destination) %></th><!-- 
             <th><%= model_class.human_attribute_name(:account_approval) %></th>
             <th><%= model_class.human_attribute_name(:account_comment) %></th>
@@ -22,11 +23,14 @@
           </tr>
         </thead>
         <tbody>
-          <% @orders.each do |order| %>
+          <!-- show order with customer name = current_user.username -->
+          <% @orders2.where(:custumer => current_user.username).each do |order| %>
+         
             <tr>
               <td><%= link_to order.id, order_path(order) %></td>
               <td><%= order.custumer %></td>
               <td><%= order.product %></td>
+              <td><%= link_to "Download Voucher", order.attachment_url %></td>
               <td><%= order.destination %></td><!-- 
               <td><%= order.account_approval %></td>
               <td><%= order.account_comment %></td>
@@ -47,10 +51,9 @@
           <% end %>
         </tbody>
       </table>
-
-        <%= link_to t('.new', :default => t("helpers.links.new")),
-                    new_order_path,
-                    :class => 'btn btn-primary' %>
     </div>
 
 </div>
+<div class="col-md-12 text-center">
+        <%= will_paginate @orders2, :page_links => false %>
+      </div>

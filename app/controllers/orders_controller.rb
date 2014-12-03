@@ -4,7 +4,9 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders2 = Order.paginate(page: params[:page], per_page: 5).order('created_at DESC')
+    @orders = Order.all.order('created_at DESC')
+    # Post.paginate(:page => params[:page])
   end
   
   def chart
@@ -80,6 +82,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:custumer,:stage_id, :product, :account_approval, :account_comment, :warehouse_approval, :destination, :current_location, :warehouse_comment, :delivered)
+      params.require(:order).permit(:attachment,:custumer,:stage_id, :product, :account_approval, :account_comment, :warehouse_approval, :destination, :current_location, :warehouse_comment, :delivered)
     end
 end

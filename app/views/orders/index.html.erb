@@ -30,6 +30,8 @@
                         </ol>
                     </div>
                 </div>
+                <%= current_user.role %>
+<%= current_user.username %>
 <% if current_user.role == "admin" || current_user.role == "warehouse" || current_user.role == "account" || current_user.role == "sales" %>
        <div class="row">
                     <div class="col-lg-3 col-md-6">

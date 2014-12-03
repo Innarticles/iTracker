@@ -11,6 +11,7 @@
             <th><%= model_class.human_attribute_name(:id) %></th>
             <th>Customer</th>
             <th><%= model_class.human_attribute_name(:product) %></th>
+            <th>Download Link</th>
             <th><%= model_class.human_attribute_name(:destination) %></th>
             <th><%= model_class.human_attribute_name(:account_approval) %></th>
             <th><%= model_class.human_attribute_name(:account_comment) %></th>
@@ -29,6 +30,7 @@
               <td><%= link_to order.id, order_path(order) %></td>
               <td><%= order.custumer %></td>
               <td><%= order.product %></td>
+               <td><%= link_to "Download Voucher", order.attachment_url %></td>
               <td><%= order.destination %></td>
               <td><%= approve_tag(order.account_approval) %></td>
               <td><%= order.account_comment %></td>
@@ -56,3 +58,6 @@
     </div>
 
 </div>
+<div class="col-md-12 text-center">
+        <%= will_paginate @orders2, :page_links => false %>
+      </div>
