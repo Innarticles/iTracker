@@ -1,6 +1,6 @@
 class MakeDeliverBool < ActiveRecord::Migration
   def up
-  	change_column("orders", "delivered", :boolean)
+  	change_column("orders", "delivered", 'boolean USING CAST(delivered AS boolean)')
   end
 
   def down
