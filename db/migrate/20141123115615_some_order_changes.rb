@@ -1,7 +1,8 @@
 class SomeOrderChanges < ActiveRecord::Migration
   def up
-  	change_column("orders", "account_approval", :boolean)
-  	change_column("orders", "warehouse_approval", :boolean)
+    'integer USING CAST(column_name AS integer)'
+  	change_column("orders", "account_approval", 'boolean USING CAST(column_name AS boolean)')
+  	change_column("orders", "warehouse_approval", 'boolean USING CAST(column_name AS boolean))
   	add_column("orders", "driver", :string, :after => "destination")
   	
   end
