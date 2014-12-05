@@ -108,6 +108,7 @@ text-align: right;
 
 .loginpad{
   padding-top: 17%;
+  margin-left: 27%;
 }
 
 .body{
@@ -256,7 +257,9 @@ color: #F4EDED;
 }
 
 .robot{
-    letter-spacing: 5px;    
+    letter-spacing: 5px;   
+    height: 130px;
+    width: 131%; 
     font-family: 'Roboto Slab';
     text-shadow: 0 0 1em white, 0 0 0.2em black;
 }
