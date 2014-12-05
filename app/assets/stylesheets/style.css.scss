@@ -111,7 +111,9 @@ text-align: right;
 }
 
 .body{
-  background: url('/assets/isb.png');
+  /*background-image: image_path('isb.png');*/
+ /* background: url('/assets/isb.png');*/
+ background: image-url('isb.png');
   background-repeat: no-repeat;
 }
 .navbar-inverse {
