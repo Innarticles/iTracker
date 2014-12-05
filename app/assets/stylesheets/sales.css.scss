@@ -33,6 +33,8 @@ section,
 summary {
   display: block;
 }
+
+
 audio,
 canvas,
 progress,
@@ -44,6 +46,8 @@ audio:not([controls]) {
   display: none;
   height: 0;
 }
+
+
 [hidden],
 template {
   display: none;
@@ -75,6 +79,10 @@ mark {
 }
 small {
   font-size: 80%;
+}
+.sicialbtn{
+  text-align: center;
+padding: 5px;
 }
 sub,
 sup {

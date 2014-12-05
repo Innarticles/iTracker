@@ -1,47 +1,57 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                   
-                         <div class="imageholder">
-                            <% if current_user.role == "admin" %>
-                            <%= image_tag "profile.png", size: "150x150", :class => "profileimg" %>
-                            <% elsif current_user.role == "sales" %>
-                            <%= image_tag "download.jpg", size: "150x150", :class => "profileimg" %>
-                            <% elsif current_user.role == "warehouse" %>
-                            <%= image_tag "warehouse.jpg", size: "150x150", :class => "profileimg" %>
-                             <% elsif current_user.role == "account" %>
-                              <%= image_tag "accountant.jpg", size: "150x150", :class => "profileimg" %>
-                              <% elsif current_user.role == "customer" %>
-                              <%= image_tag "download.jpg", size: "150x150", :class => "profileimg" %>
-                              <% end %>
-
-                        </div>
-                    
+                   <div class="imageholder">
+                      <% if current_user.role == "admin" %>
+                      <%= image_tag "profile.png", size: "120x120", :class => "profileimg" %>
+                      <% elsif current_user.role == "sales" %>
+                      <%= image_tag "download.jpg", size: "120x120", :class => "profileimg" %>
+                      <% elsif current_user.role == "warehouse" %>
+                      <%= image_tag "warehouse.jpg", size: "120x120", :class => "profileimg" %>
+                       <% elsif current_user.role == "account" %>
+                        <%= image_tag "accountant.jpg", size: "120x120", :class => "profileimg" %>
+                        <% elsif current_user.role == "customer" %>
+                        <%= image_tag "download.jpg", size: "120x120", :class => "profileimg" %>
+                        <% end %>
+                  </div>
+                  <div class="socialbtn" <div class="socialbtn" style="text-align: center;padding: 6px;">
+                    <a href="http://facebook.com" class="btn btn-social-icon btn-facebook">
+                      <i class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-dropbox"><i class="fa fa-dropbox"></i></a>
+                    <a class="btn btn-social-icon btn-flickr"><i class="fa fa-flickr"></i></a>
+                    <a class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+                  </div>
+                  
                     <li class="active">
-                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                      <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-                    <li>
-                     <%= link_to  orders_chart_path do %>
-                <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;&nbsp;Charts
-                </li><% end %>
-                
                     
+
                     <% if can? :create, @order%>
-                    <li>
-                <%= link_to  new_order_path do %>
-                <i class="fa fa-plus"></i>&nbsp;&nbsp;Create new
-                </li><% end %>
-                <% end %>
-                 <li>
-                 <%= link_to  orders_path do %> 
-                    <i class="fa fa-list"></i>&nbsp;&nbsp;All Orders
-                    </li>
-                    <% end %>
-                    <li>
-                    <%= link_to  sales_complete_path do %> 
-                     <i class="fa fa-check"></i>&nbsp;&nbsp;Completed Orders</li>
-                     <% end %>
-                    
-                    
+                        <li>
+                          <%= link_to  new_order_path do %>
+                          <i class="fa fa-plus"></i>&nbsp;&nbsp;Create new
+                        </li>
+                        <% end %>
+                    <% end %> 
+                    <% if current_user.role != "customer" %>
+                        <li>
+                         <%= link_to  orders_chart_path do %>
+                          <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;&nbsp;Charts
+                        </li>
+                        <% end %>
+                        <li>
+                          <%= link_to  orders_path do %> 
+                          <i class="fa fa-list"></i>&nbsp;&nbsp;All Orders
+                        </li>
+                        <% end %>
+
+                        <li>
+                          <%= link_to  sales_complete_path do %> 
+                          <i class="fa fa-check"></i>&nbsp;&nbsp;Completed Orders
+                        </li>
+                        <% end %>
+                    <% end %>   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

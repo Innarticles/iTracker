@@ -1,26 +1,21 @@
 <div class="row loginpad">
 
-  <div class="col-md-4">
-    <div class="rotator rot robot">
-      <div>
-        <h3>Engage your customers with iTracker</h3>
-      </div>
-      <div>
-        <h3>Relief them of suprises</h3>
-      </div>
-      <div>
-        <h3>Grow your customer loyalty</h3>
-      </div>
-    </div>
-  </div>
+  <div class="rotator rot robot">
+                <div>
+                  <h3>Engage your customers with iTracker</h3>
+                </div>
+                <div>
+                  <h3>Relief them of suprises</h3>
+                </div>
+                <div>
+                  <h3>Grow your customer loyalty</h3>
+                </div>
+          </div>
 
-
-  
+           <br>
     <div class="col-md-4">
        <div class="login-box login-form">
-      
-
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "form-horizontal ls-form") do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "form-horizontal ls-form") do |f| %>
               <h2>Edit <%= resource_name.to_s.humanize %></h2>
               <%= devise_error_messages! %>
 

@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   end
   
   def chart
+    @orders2 = Order.paginate(page: params[:page], per_page: 5).order('created_at DESC')
     @orders = Order.all
   end
 

@@ -5,7 +5,8 @@
     </div>
     <div class="panel panel-primary">
         <div class="panel-heading"><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></div>
-      <table class="table table-condensed table-hover table-striped">
+    <div class="table-responsive">
+    <table class="table table-condensed table-hover table-striped">
         <thead>
           <tr>
             <th><%= model_class.human_attribute_name(:id) %></th>
@@ -46,9 +47,10 @@
                             :class => 'btn btn-xs btn-danger' %> -->
               </td>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+            <% end %>
+          </tbody>
+      </table></div>
+      
 <!-- 
         <%= link_to t('.new', :default => t("helpers.links.new")),
                     new_order_path,
